@@ -8,6 +8,7 @@
 // <author>developer@exitgames.com</author>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,6 +23,9 @@ namespace Photon.Pun.Demo.PunBasics
     public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         #region Public Fields
+
+        [SerializeField] private GameObject OkImage;
+        [SerializeField] private GameObject WrongImage;
 
         [Tooltip("The current Health of our player")]
         public float Health = 1f;
@@ -108,6 +112,14 @@ namespace Photon.Pun.Demo.PunBasics
             // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
 			UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
             #endif
+            
+            /*var OkImagetr = transform.Find("OkImage");
+            var WrongImageTr = transform.Find("WrongImage");
+
+            OkImage = OkImagetr.gameObject;
+            WrongImage = WrongImageTr.gameObject;*/
+            OkImage.SetActive(false);
+            WrongImage.SetActive(false);
         }
 
 
@@ -268,6 +280,23 @@ namespace Photon.Pun.Demo.PunBasics
                     this.IsFiring = false;
                 }
             }
+
+            if (Input.GetButtonDown("OkImage"))
+            {
+                StartCoroutine(ImgAppearDisappear(3, OkImage));
+            }
+            
+            if (Input.GetButtonDown("WrongImage"))
+            {
+                StartCoroutine(ImgAppearDisappear(3, WrongImage));
+            }
+        }
+        
+        private static IEnumerator ImgAppearDisappear(float timespan, GameObject obj)
+        {
+            obj.SetActive(true);
+            yield return new WaitForSeconds(timespan);
+            obj.SetActive(false);
         }
 
         #endregion
