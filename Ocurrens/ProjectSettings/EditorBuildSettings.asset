@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerSceneTest.unity
+    guid: 78507a8dc3912c44cb96ee1256e3dd4b
+  - enabled: 1
+    path: Assets/Scenes/Scene1.unity
+    guid: 1e112a8e969014f4aad7531d052d0d1c
+  - enabled: 1
+    path: Assets/Scenes/Scene2.unity
+    guid: 51fef4e49060b574d8456f67508ed802
+  - enabled: 1
+    path: Assets/Samples/XR Interaction Toolkit/2.3.0/Starter Assets/DemoScene.unity
+    guid: 319dafa5c80f29f428dc1e0d03f04177
   m_configObjects: {}
