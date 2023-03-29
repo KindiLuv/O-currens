@@ -25,6 +25,10 @@ namespace Photon.Pun.Demo.PunBasics
 
 		#region Private Serializable Fields
 
+		[Tooltip("The scene name to load")]
+		[SerializeField]
+		private string levelName;
+
 		[Tooltip("The Ui Panel to let the user enter name, connect and play")]
 		[SerializeField]
 		private GameObject controlPanel;
@@ -215,7 +219,7 @@ namespace Photon.Pun.Demo.PunBasics
 
 				// #Critical
 				// Load the Room Level. 
-				PhotonNetwork.LoadLevel("PunBasics-Room for 1");
+				PhotonNetwork.LoadLevel(levelName);
 
 			}
 		}
