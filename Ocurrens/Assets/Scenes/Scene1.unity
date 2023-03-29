@@ -13328,6 +13328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1554256562}
   - component: {fileID: 1554256563}
+  - component: {fileID: 1554256564}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -13366,6 +13367,14 @@ MonoBehaviour:
     type: 3}
   OkImage: {fileID: 0}
   WrongImage: {fileID: 0}
+--- !u!81 &1554256564
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554256561}
+  m_Enabled: 1
 --- !u!1001 &1567322011
 PrefabInstance:
   m_ObjectHideFlags: 0
