@@ -92,6 +92,9 @@ namespace Photon.Pun.Demo.PunBasics
 		public void OnStartFollowing()
 		{	      
 			cameraTransform = Camera.main.transform;
+			cameraTransform.SetParent(transform);
+			cameraTransform.transform.rotation = new Quaternion(0, 0, 0, 0);
+			cameraTransform.transform.position = new Vector3(0, 6.75f, 0);
 			isFollowing = true;
 			// we don't smooth anything, we go straight to the right camera shot
 			Cut();
@@ -106,24 +109,14 @@ namespace Photon.Pun.Demo.PunBasics
 		/// </summary>
 		void Follow()
 		{
-			cameraOffset.z = -distance;
-			cameraOffset.y = height;
-			
-		    cameraTransform.position = Vector3.Lerp(cameraTransform.position, this.transform.position +this.transform.TransformVector(cameraOffset), smoothSpeed*Time.deltaTime);
-
-		    cameraTransform.LookAt(this.transform.position + centerOffset);
-		    
+			Debug.Log(transform.position);
 	    }
 		
 		
 		void Cut()
 		{
-			cameraOffset.z = -distance;
-			cameraOffset.y = height;
+			Debug.Log(transform.position);
 
-			cameraTransform.position = this.transform.position + this.transform.TransformVector(cameraOffset);
-
-			cameraTransform.LookAt(this.transform.position + centerOffset);
 		}
 		#endregion
 	}
