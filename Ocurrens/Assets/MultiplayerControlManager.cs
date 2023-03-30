@@ -15,15 +15,14 @@ public class MultiplayerControlManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (myphotonView.IsMine)
+        if (!myphotonView.IsMine)
         {
             foreach (var obj in myObjects)
             {
-                obj.SetActive(true);
+                obj.SetActive(false);
             }
-            myCapsule.SetActive(false);
-            Destroy(ControllerToDisable.GetComponent<CharacterController>());
             Destroy(ControllerToDisable.GetComponent<FirstPersonController>());
+            Destroy(ControllerToDisable.GetComponent<CharacterController>());
             Destroy(ControllerToDisable.GetComponent<StarterAssetsInputs>());
             Destroy(ControllerToDisable.GetComponent<BasicRigidBodyPush>());
             Destroy(ControllerToDisable.GetComponent<PlayerInput>());
