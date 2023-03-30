@@ -142,13 +142,7 @@ namespace Photon.Pun.Demo.PunBasics
 
 
         #region MonoBehaviourPunCallbacks CallBacks
-        // below, we implement some callbacks of PUN
-        // you can find PUN's callbacks in the class MonoBehaviourPunCallbacks
-
-
-        /// <summary>
-        /// Called after the connection to the master is established and authenticated
-        /// </summary>
+        
         public override void OnConnectedToMaster()
 		{
             // we don't want to do anything if we are not attempting to join a room. 
@@ -163,13 +157,7 @@ namespace Photon.Pun.Demo.PunBasics
 				PhotonNetwork.JoinRandomRoom();
 			}
 		}
-
-		/// <summary>
-		/// Called when a JoinRandom() call failed. The parameter provides ErrorCode and message.
-		/// </summary>
-		/// <remarks>
-		/// Most likely all rooms are full or no rooms are available. <br/>
-		/// </remarks>
+        
 		public override void OnJoinRandomFailed(short returnCode, string message)
 		{
 			LogFeedback("<Color=Red>OnJoinRandomFailed</Color>: Next -> Create a new Room");
@@ -178,11 +166,7 @@ namespace Photon.Pun.Demo.PunBasics
 			// #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
 			PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = this.maxPlayersPerRoom});
 		}
-
-
-		/// <summary>
-		/// Called after disconnecting from the Photon server.
-		/// </summary>
+		
 		public override void OnDisconnected(DisconnectCause cause)
 		{
 			LogFeedback("<Color=Red>OnDisconnected</Color> "+cause);
@@ -195,18 +179,7 @@ namespace Photon.Pun.Demo.PunBasics
 			controlPanel.SetActive(true);
 
 		}
-
-		/// <summary>
-		/// Called when entering a room (by creating or joining it). Called on all clients (including the Master Client).
-		/// </summary>
-		/// <remarks>
-		/// This method is commonly used to instantiate player characters.
-		/// If a match has to be started "actively", you can call an [PunRPC](@ref PhotonView.RPC) triggered by a user's button-press or a timer.
-		///
-		/// When this is called, you can usually already access the existing players in the room via PhotonNetwork.PlayerList.
-		/// Also, all custom properties should be already available as Room.customProperties. Check Room..PlayerCount to find out if
-		/// enough players are in the room to start playing.
-		/// </remarks>
+		
 		public override void OnJoinedRoom()
 		{
 			LogFeedback("<Color=Green>OnJoinedRoom</Color> with "+PhotonNetwork.CurrentRoom.PlayerCount+" Player(s)");

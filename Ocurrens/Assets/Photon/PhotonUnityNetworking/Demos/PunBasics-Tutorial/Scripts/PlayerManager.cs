@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Photon.Pun.Demo.PunBasics
@@ -13,6 +14,7 @@ namespace Photon.Pun.Demo.PunBasics
     {
         #region Public Fields
 
+        [SerializeField] private GameObject Canvass;
         [SerializeField] private GameObject OkImage;
         [SerializeField] private GameObject WrongImage;
 
@@ -55,24 +57,17 @@ namespace Photon.Pun.Demo.PunBasics
             {
                 Debug.LogError("<Color=Red><b>Missing</b></Color> CameraWork Component on player Prefab.", this);
             }
-            OkImage.SetActive(false);
-            WrongImage.SetActive(false);
+            /*OkImage.SetActive(false);
+            WrongImage.SetActive(false);*/
         }
-        
-        private bool leavingRoom;
 
-        public override void OnLeftRoom()
+        private void Update()
         {
-            this.leavingRoom = false;
+            if (photonView.IsMine)
+            {
+                ProcessInputs();
+            }
         }
-        
-        #if !UNITY_5_4_OR_NEWER
-        /// <summary>See CalledOnLevelWasLoaded. Outdated in Unity 5.4.</summary>
-        void OnLevelWasLoaded(int level)
-        {
-            this.CalledOnLevelWasLoaded(level);
-        }
-        #endif
         #endregion
 
         #region Private Methods
@@ -93,11 +88,13 @@ namespace Photon.Pun.Demo.PunBasics
             }
         }
         
-        private static IEnumerator ImgAppearDisappear(float timespan, GameObject obj)
+        private IEnumerator ImgAppearDisappear(float timespan, GameObject obj)
         {
-            obj.SetActive(true);
+            Canvass.transform.position += new Vector3(0, .5f, 0);
             yield return new WaitForSeconds(timespan);
             obj.SetActive(false);
+            yield return new WaitForSeconds(timespan);
+            obj.SetActive(true);
         }
 
         #endregion
