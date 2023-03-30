@@ -89,7 +89,7 @@ namespace Photon.Pun.Demo.PunBasics
             {
                 if (photonView.IsMine)
                 {
-                    _cameraWork.OnStartFollowing();
+                    _cameraWork.GetCamera();
                 }
             }
             else

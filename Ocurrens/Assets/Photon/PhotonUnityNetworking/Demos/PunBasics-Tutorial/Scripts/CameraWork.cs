@@ -19,6 +19,8 @@ namespace Photon.Pun.Demo.PunBasics
 	{
         #region Private Fields
 
+        private Transform myCamera;
+        
 	    [Tooltip("The distance in the local x-z plane to the target")]
 	    [SerializeField]
 	    private float distance = 7.0f;
@@ -61,9 +63,17 @@ namespace Photon.Pun.Demo.PunBasics
 			// Start following the target if wanted.
 			if (followOnStart)
 			{
-				OnStartFollowing();
+				GetCamera();
 			}
 		}
+
+        public void GetCamera()
+        {
+	        myCamera = Camera.main.transform;
+	        myCamera.SetParent(transform);
+	        myCamera.transform.rotation = new Quaternion(0, 0, 0, 0);
+	        myCamera.transform.position = new Vector3(0, 6.75f, 0);
+        }
 
 
 		void LateUpdate()
@@ -72,7 +82,7 @@ namespace Photon.Pun.Demo.PunBasics
 			// so we need to cover corner cases where the Main Camera is different everytime we load a new scene, and reconnect when that happens
 			if (cameraTransform == null && isFollowing)
 			{
-				OnStartFollowing();
+				GetCamera();
 			}
 
 			// only follow is explicitly declared
