@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3121883019899663848}
   - component: {fileID: 8956947438607170353}
   - component: {fileID: 8946340500577529104}
+  - component: {fileID: 9174947376514732883}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -98,6 +99,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9174947376514732883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304538812023033532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &8783206016189568287
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +173,8 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 4045051886619291435}
+  - {fileID: 9174947376514732883}
+  - {fileID: 3301418714913993356}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -190,9 +209,9 @@ MonoBehaviour:
   myObjects:
   - {fileID: 3316061402670508009}
   - {fileID: 5663497798918147388}
-  - {fileID: 8028154883816152811}
   myCapsule: {fileID: 8304538812023033532}
   myphotonView: {fileID: 4914017382386849797}
+  ControllerToDisable: {fileID: 8028154883816152811}
 --- !u!1001 &1800633310325766335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,7 +227,7 @@ PrefabInstance:
     - target: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
@@ -273,6 +292,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1800633310325766335}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5919329193620228861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5393215578589016642, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1800633310325766335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3301418714913993356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5919329193620228861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!4 &7215449367172187217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
