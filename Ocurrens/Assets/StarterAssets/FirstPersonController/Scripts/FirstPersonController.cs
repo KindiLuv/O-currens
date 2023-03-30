@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -9,7 +10,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM
 	[RequireComponent(typeof(PlayerInput))]
 #endif
-	public class FirstPersonController : MonoBehaviour
+	public class FirstPersonController : MonoBehaviourPun
 	{
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
@@ -88,6 +89,10 @@ namespace StarterAssets
 
 		private void Awake()
 		{
+			if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+			{
+				return;
+			}
 			// get a reference to our main camera
 			if (_mainCamera == null)
 			{
@@ -97,6 +102,10 @@ namespace StarterAssets
 
 		private void Start()
 		{
+			if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+			{
+				return;
+			}
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM
@@ -112,6 +121,10 @@ namespace StarterAssets
 
 		private void Update()
 		{
+			if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+			{
+				return;
+			}
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
@@ -119,6 +132,10 @@ namespace StarterAssets
 
 		private void LateUpdate()
 		{
+			if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
+			{
+				return;
+			}
 			CameraRotation();
 		}
 
