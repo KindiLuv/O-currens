@@ -114,8 +114,8 @@ namespace Photon.Pun.Demo.PunBasics
 		    cameraTransform.LookAt(this.transform.position + centerOffset);
 		    
 	    }
-
-	   
+		
+		
 		void Cut()
 		{
 			cameraOffset.z = -distance;
