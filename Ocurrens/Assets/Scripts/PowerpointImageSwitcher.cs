@@ -12,7 +12,8 @@ public class PowerpointImageSwitcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        activeRawImage.enabled = true;
+        activeRawImage = _pipoint[0];
+        activeRawImage.gameObject.SetActive(true);  
     }
 
     // Update is called once per frame
@@ -21,15 +22,15 @@ public class PowerpointImageSwitcher : MonoBehaviour
         // Show/Hide the UI
         if (Input.GetKeyDown(KeyCode.P))
         {
-            
+            displayHud.SetActive(!displayHud.activeInHierarchy);
         }
         
+        // Cycle thru rawImages
         if (displayHud.activeInHierarchy)
         {
-           // Cycle thru rawImages
-           if (Input.GetKeyDown(KeyCode.P))
+           if (Input.GetKeyDown(KeyCode.E))
            {
-               activeRawImage.enabled = false;
+               activeRawImage.gameObject.SetActive(false);
                switch (activeRawImage)
                {
                    case not null when activeRawImage == _pipoint[0]:
@@ -42,7 +43,7 @@ public class PowerpointImageSwitcher : MonoBehaviour
                        activeRawImage = _pipoint[0];
                        break;
                }
-               activeRawImage.enabled = true;
+               activeRawImage.gameObject.SetActive(true);
            } 
         }
         
