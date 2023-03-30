@@ -513,7 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 7
   height: 3
-  centerOffset: {x: 0, y: 0, z: 0}
+  centerOffset: {x: 0, y: 2, z: 1}
   followOnStart: 0
   smoothSpeed: 2
 --- !u!114 &11400008
@@ -538,6 +538,9 @@ MonoBehaviour:
   - {fileID: 11449706}
   - {fileID: 11400010}
   - {fileID: 11413802}
+  - {fileID: 56910979060157970}
+  - {fileID: 2296668567633364585}
+  - {fileID: 8657130504145330568}
   sceneViewId: 0
   InstantiationId: 1
   isRuntimeInstantiated: 0
@@ -2142,6 +2145,7 @@ GameObject:
   - component: {fileID: 1622866783440307214}
   - component: {fileID: 2367052282195224519}
   - component: {fileID: 6277022438059218367}
+  - component: {fileID: 8657130504145330568}
   m_Layer: 5
   m_Name: WrongImage
   m_TagString: WrongImage
@@ -2204,6 +2208,22 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &8657130504145330568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497932705739445402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &4571404865667675771
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,6 +2235,7 @@ GameObject:
   - component: {fileID: 4768819667468950359}
   - component: {fileID: 2129841531653158066}
   - component: {fileID: 148844510634166013}
+  - component: {fileID: 2296668567633364585}
   m_Layer: 5
   m_Name: OkImage
   m_TagString: OkImage
@@ -2277,6 +2298,22 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &2296668567633364585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571404865667675771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &5639386371106893887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,6 +2325,7 @@ GameObject:
   - component: {fileID: 6940516981922911515}
   - component: {fileID: 7350015535315321944}
   - component: {fileID: 1870501815068322133}
+  - component: {fileID: 56910979060157970}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2361,3 +2399,19 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
+--- !u!114 &56910979060157970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5639386371106893887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
