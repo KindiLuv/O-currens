@@ -9,7 +9,7 @@ public class SkyBoxManager : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        RenderSettings.skybox = skybox1;
+        //RenderSettings.skybox = skybox1;
     }
 
     private void Update()
