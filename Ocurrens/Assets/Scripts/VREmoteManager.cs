@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class EmoteManager : MonoBehaviour
+public class VREmoteManager : MonoBehaviour
 {
     [SerializeField] private InputActionAsset ActionAsset;
     [SerializeField] private RawImage OkImage;
