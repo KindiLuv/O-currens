@@ -481,9 +481,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fac77b304554f238a61572f5720187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvass: {fileID: 5639386371106893887}
   OkImage: {fileID: 4571404865667675771}
   WrongImage: {fileID: 4497932705739445402}
+  Health: 1
+  playerUiPrefab: {fileID: 0}
+  beams: {fileID: 0}
 --- !u!114 &5641412347454204497
 MonoBehaviour:
   m_ObjectHideFlags: 0
