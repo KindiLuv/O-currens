@@ -16,7 +16,7 @@ public class SkyBoxManager : MonoBehaviourPun
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            photonView.RPC("SwapSkybox", RpcTarget.AllBuffered);
+            photonView.RPC("SwapSkybox", RpcTarget.AllViaServer);
         }
     }
 
