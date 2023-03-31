@@ -483,9 +483,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OkImage: {fileID: 4571404865667675771}
   WrongImage: {fileID: 4497932705739445402}
-  Health: 1
-  playerUiPrefab: {fileID: 0}
-  beams: {fileID: 0}
 --- !u!114 &5641412347454204497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,7 +495,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd08475b23aa548b7b9d28397d430b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followOnStart: 0
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,9 +514,9 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 11449706}
   - {fileID: 11400010}
   - {fileID: 3638373595444795603}
-  - {fileID: 4100294042616313471}
   sceneViewId: 0
   InstantiationId: 1
   isRuntimeInstantiated: 0
@@ -1922,7 +1918,7 @@ GameObject:
   - component: {fileID: 1622866783440307214}
   - component: {fileID: 2367052282195224519}
   - component: {fileID: 6277022438059218367}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WrongImage
   m_TagString: WrongImage
   m_Icon: {fileID: 0}
@@ -1995,7 +1991,7 @@ GameObject:
   - component: {fileID: 4768819667468950359}
   - component: {fileID: 2129841531653158066}
   - component: {fileID: 148844510634166013}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: OkImage
   m_TagString: OkImage
   m_Icon: {fileID: 0}
@@ -2068,8 +2064,7 @@ GameObject:
   - component: {fileID: 6940516981922911515}
   - component: {fileID: 7350015535315321944}
   - component: {fileID: 1870501815068322133}
-  - component: {fileID: 4100294042616313471}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2142,19 +2137,3 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &4100294042616313471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5639386371106893887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
